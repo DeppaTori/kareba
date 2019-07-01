@@ -17,6 +17,7 @@
             v-bind:key = "todo.id"
         ></GeneralTodo>
     </ol>
+        <button v-bind:disabled="isButtonDisabled">Disabled Button</button>
     </div>
 </template>
 
@@ -34,7 +35,8 @@ export default{
                 {id:1, text:'Learn Vue'},
                 {id:2, text:'Build Something awesome'}
             ],
-            message:'Hello Vue.js!'
+            message:'Hello Vue.js!',
+            isButtonDisabled:true
         }
     },
    
@@ -45,6 +47,10 @@ export default{
     },
     components:{
         GeneralTodo
+    },
+    created:function(){
+        console.log('This data');
+        console.log(this.todos);
     }
         
     
