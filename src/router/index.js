@@ -5,6 +5,7 @@ import About from '@/components/About'
 import Todos from '@/components/Todos'
 import Form from '@/components/Form'
 import Display from '@/components/Display'
+import General from '@/components/General'
 
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ export default new Router({
       path: '/display',
       name: 'Display',
       component: Display
+    },
+    {
+      path:'/general',
+      name:'General',
+      component:General
     }
   ]
 })

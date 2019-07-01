@@ -8,6 +8,7 @@
     <router-link to="/todos/2">Axios  Sample 2</router-link>
     <router-link to="/form">Store Form</router-link>
     <router-link to="/display">Store Display</router-link>
+    <router-link to="/general">General</router-link>
     <router-view/>
   </div>
 </template>
