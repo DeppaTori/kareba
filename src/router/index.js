@@ -6,6 +6,8 @@ import Todos from '@/components/Todos'
 import Form from '@/components/Form'
 import Display from '@/components/Display'
 import General from '@/components/General'
+import ComputedProps from '@/components/ComputedProps'
+import ClassStyle from '@/components/ClassStyle'
 
 Vue.use(Router)
 
@@ -42,9 +44,19 @@ export default new Router({
       component: Display
     },
     {
-      path:'/general',
-      name:'General',
-      component:General
+      path: '/general',
+      name: 'General',
+      component: General
+    },
+    {
+      path: '/computed',
+      name: 'Computed',
+      component: ComputedProps
+    },
+    {
+      path: '/classandstyle',
+      name: 'ClassStyle',
+      component: ClassStyle
     }
   ]
 })
