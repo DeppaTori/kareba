@@ -8,6 +8,7 @@ import Display from '@/components/Display'
 import General from '@/components/General'
 import ComputedProps from '@/components/ComputedProps'
 import ClassStyle from '@/components/ClassStyle'
+import ComponentDemo from '@/components/ComponentDemo'
 
 Vue.use(Router)
 
@@ -57,6 +58,11 @@ export default new Router({
       path: '/classandstyle',
       name: 'ClassStyle',
       component: ClassStyle
+    },
+    {
+      path: '/componentdemo',
+      name: 'ComponentDemo',
+      component: ComponentDemo
     }
   ]
 })
