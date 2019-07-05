@@ -16,5 +16,6 @@
 export default{
     name:'BlogPost',
     props:['post']
+
 }
 </script>

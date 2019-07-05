@@ -1,6 +1,8 @@
 <template>
     <div class="component-demo">
         <div :style="{fontSize:postFontSize+'em'}">
+            <h2>Prop Types Demo</h2>
+                <PropTypesComponent likes="22" v-bind:post="{title:'he',content:'aaa'}"></PropTypesComponent>
             <h2>Component Demo</h2>
                     <BlogPost title="Good Morning Vue"></BlogPost>
                     <!-- <BlogPost 
@@ -23,6 +25,7 @@
 <script>
 
 import BlogPost from './component-demo/BlogPost';
+import PropTypesComponent from './component-demo/PropTypesComponent';
 
 export default{
     name:'ComponentDemo',
@@ -37,7 +40,8 @@ export default{
         };
     },
     components:{
-        BlogPost
+        BlogPost,
+        PropTypesComponent
     }
 }
 </script>
