@@ -12,6 +12,7 @@
      <router-link to="/computed">Computed</router-link>
       <router-link to="/classandstyle">Class and Style</router-link>
        <router-link to="/componentdemo">Component Demo</router-link>
+        <router-link to="/basecomponentdemo">Base Component Demo</router-link>
     <router-view/>
   </div>
 </template>
