@@ -10,6 +10,7 @@ import ComputedProps from '@/components/ComputedProps'
 import ClassStyle from '@/components/ClassStyle'
 import ComponentDemo from '@/components/ComponentDemo'
 import BaseComponentDemo from '@/components/BaseComponentDemo'
+import SlotDemo from '@/components/slot/SlotDemo'
 
 Vue.use(Router)
 
@@ -69,6 +70,11 @@ export default new Router({
       path: '/basecomponentdemo',
       name: 'BaseComponentDemo',
       component: BaseComponentDemo
+    },
+    {
+      path: '/slot',
+      name: 'SlotDemo',
+      component: SlotDemo
     }
   ]
 })
