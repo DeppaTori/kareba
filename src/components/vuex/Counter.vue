@@ -7,27 +7,34 @@
 </template>
 <script>
 
-import {mapState} from 'vuex'
+import {mapState, mapMutations} from 'vuex'
 
 export default{
     name:'Counter',
-    // state:{
-    //     count:0,
-    //     localCount:0
-    // },
-    // computed:{
-    //     count(){
-    //         return this.$store.state.count
-    //     }
-    // }
+    created(){
+         this.$store.commit('myIncrement',10)
+        //   this.$store.commit('myIncrement',5)
+        //    this.$store.commit('myIncrement',6)
+           this.$store.commit({
+               type:'payloadIncrement',
+               amount:10,
+               extraAmount:5
+           })
+             this.add({
+                 amount:10,
+                 extraAmount:10
+             })
+    },
     computed:mapState({
         count:state=>state.count,
         countAlias:'count'
 
+    }),
+    methods:{
+        ...mapMutations({
+            add:'payloadIncrement'
     })
-    //  computed: mapState([
-    // // map this.count to store.state.count
-    // 'count'
-    // ])
+    }
+   
 }
 </script>

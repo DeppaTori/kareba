@@ -15,6 +15,12 @@ export const store = new Vuex.Store({
   mutations: {
     increment (state) {
       state.count++
+    },
+    myIncrement (state, n) {
+      state.count += n
+    },
+    payloadIncrement (state, payload) {
+      state.count += payload.amount * payload.extraAmount
     }
   },
   getters: {
