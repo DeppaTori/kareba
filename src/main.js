@@ -3,10 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import {store} from './store/store'
+import {store} from './store/Store'
 import '@/components/_globals'
 
 Vue.config.productionTip = false
+
+store.commit('increment')
+
+console.log(store.state.count)
 
 /* eslint-disable no-new */
 new Vue({

@@ -11,6 +11,7 @@ import ClassStyle from '@/components/ClassStyle'
 import ComponentDemo from '@/components/ComponentDemo'
 import BaseComponentDemo from '@/components/BaseComponentDemo'
 import SlotDemo from '@/components/slot/SlotDemo'
+import VuexDemo from '@/components/vuex/VuexDemo'
 
 Vue.use(Router)
 
@@ -75,6 +76,11 @@ export default new Router({
       path: '/slot',
       name: 'SlotDemo',
       component: SlotDemo
+    },
+    {
+      path: '/vuex',
+      name: 'VuexDemo',
+      component: VuexDemo
     }
   ]
 })

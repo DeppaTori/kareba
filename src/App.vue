@@ -14,6 +14,7 @@
        <router-link to="/componentdemo">Component Demo</router-link>
         <router-link to="/basecomponentdemo">Base Component Demo</router-link>
     <router-link to="/slot">Slot </router-link>
+    <router-link to="/vuex">Vuex </router-link>
     <router-view/>
   </div>
 </template>
