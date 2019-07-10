@@ -7,7 +7,7 @@
 </template>
 <script>
 
-import {mapState, mapMutations} from 'vuex'
+import {mapState, mapMutations,mapActions} from 'vuex'
 
 export default{
     name:'Counter',
@@ -24,6 +24,13 @@ export default{
                  amount:10,
                  extraAmount:10
              })
+             this.$store.dispatch('increment')
+             this.$store.dispatch('incrementAsync')
+             this.actionAdd()
+             this.$store.dispatch('actionA').then(()=>{
+               console.log("Action A done")
+             })
+             this.$store.dispatch('actionB')
     },
     computed:mapState({
         count:state=>state.count,
@@ -33,7 +40,10 @@ export default{
     methods:{
         ...mapMutations({
             add:'payloadIncrement'
-    })
+    }),
+        ...mapActions({
+           actionAdd:'increment' 
+        })
     }
    
 }

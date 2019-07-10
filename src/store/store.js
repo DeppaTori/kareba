@@ -33,5 +33,28 @@ export const store = new Vuex.Store({
     getTodoById: (state) => (id) => {
       return state.todos.find(todo => todo.id === id)
     }
+  },
+  actions: {
+    increment (context) {
+      context.commit('increment')
+    },
+    incrementAsync ({commit}) {
+      setTimeout(() => {
+        commit('increment')
+      }, 3000)
+    },
+    actionA ({commit}) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          commit('increment')
+          resolve()
+        }, 3000)
+      })
+    },
+    async actionB ({dispatch, commit}) {
+      await dispatch('actionA')
+      commit('increment')
+      console.log('Action B trigge')
+    }
   }
 })
