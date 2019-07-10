@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import ModuleA from '@/modules/ModuleA'
 
 Vue.use(Vuex)
 
@@ -11,6 +12,16 @@ export const store = new Vuex.Store({
       {id: 1, text: 'Apple', done: true},
       {id: 2, text: 'Manggo', done: false}
     ]
+  },
+  modules: {
+    a: ModuleA,
+    account: {
+      namespaced: true,
+      state: {
+        count: 50,
+        apple: 250
+      }
+    }
   },
   mutations: {
     increment (state) {
