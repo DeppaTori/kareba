@@ -1,17 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import About from '@/components/About'
-import Todos from '@/components/Todos'
-import Form from '@/components/Form'
-import Display from '@/components/Display'
-import General from '@/components/General'
-import ComputedProps from '@/components/ComputedProps'
-import ClassStyle from '@/components/ClassStyle'
-import ComponentDemo from '@/components/ComponentDemo'
-import BaseComponentDemo from '@/components/BaseComponentDemo'
-import SlotDemo from '@/components/slot/SlotDemo'
-import VuexDemo from '@/components/vuex/VuexDemo'
+import User from '@/components/router-component/User'
+import UserProfile from '@/components/router-component/user/UserProfile'
+import UserPost from '@/components/router-component/user/UserPost'
+import UserHome from '@/components/router-component/user/UserHome'
+import Login from '@/components/router-component/Login'
 
 Vue.use(Router)
 
@@ -23,64 +17,29 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/hello',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About
-    },
-    {
-      path: '/todos/:id',
-      name: 'Todos',
-      component: Todos
-    },
-    {
-      path: '/form',
-      name: 'Form',
-      component: Form
-    },
-    {
-      path: '/display',
-      name: 'Display',
-      component: Display
-    },
-    {
-      path: '/general',
-      name: 'General',
-      component: General
-    },
-    {
-      path: '/computed',
-      name: 'Computed',
-      component: ComputedProps
-    },
-    {
-      path: '/classandstyle',
-      name: 'ClassStyle',
-      component: ClassStyle
-    },
-    {
-      path: '/componentdemo',
-      name: 'ComponentDemo',
-      component: ComponentDemo
-    },
-    {
-      path: '/basecomponentdemo',
-      name: 'BaseComponentDemo',
-      component: BaseComponentDemo
-    },
-    {
-      path: '/slot',
-      name: 'SlotDemo',
-      component: SlotDemo
-    },
-    {
-      path: '/vuex',
-      name: 'VuexDemo',
-      component: VuexDemo
+      path: '/user/:id',
+      component: User,
+      children: [
+        {
+          path: '/profile',
+          component: UserProfile
+          
+        },
+        {
+          path: 'posts',
+          component: UserPost,
+          meta: { requiresAuth: true }
+        },
+        {
+          path: '',
+          component: UserHome
+        }
+      ]
     }
   ]
 })
